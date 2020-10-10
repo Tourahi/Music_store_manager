@@ -1,0 +1,8 @@
+TODO:
+ - Identify tables needed :
+ 	* User 
+ 	* Order
+ 	* Song (item)
+ 	* Stock
+ - Create the database 
+ - Connection Class
