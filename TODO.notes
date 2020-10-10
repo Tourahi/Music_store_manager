@@ -1,4 +1,9 @@
 TODO:
+	#MySql
+ - Database connector [DONE]
+ - Run SQL scripts from files [DONE]
+ - Execute statements [DONE]
+
  - Identify tables needed :
  	* User 
  	* Order
@@ -6,3 +11,5 @@ TODO:
  	* Stock
  - Create the database 
  - Connection Class
+
+
