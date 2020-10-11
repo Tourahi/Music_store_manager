@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1602372169 source:/home/maro/Git/CPP/Music_store_manager/main.cpp
+1602376238 source:/home/maro/Git/CPP/Music_store_manager/main.cpp
 	<iostream>
 	"MySql.h"
 
-1602372465 /home/maro/Git/CPP/Music_store_manager/MySql.h
+1602375236 /home/maro/Git/CPP/Music_store_manager/MySql.h
 	<mysql_connection.h>
 	<driver.h>
 	<exception.h>
@@ -11,7 +11,7 @@
 	<statement.h>
 	<vector>
 
-1602372204 source:/home/maro/Git/CPP/Music_store_manager/MySql.cpp
+1602375593 source:/home/maro/Git/CPP/Music_store_manager/MySql.cpp
 	"MySql.h"
 	<fstream>
 	<iostream>

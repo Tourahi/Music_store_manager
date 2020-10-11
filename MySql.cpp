@@ -32,7 +32,7 @@ sql::ResultSet* MySql::executeStatement(std::string dbName,std::string Statement
     }
 }
 
-sql::ResultSet* MySql::executeStatemantsFromFile(std::string dbName,std::string file) {
+sql::ResultSet* MySql::executeStatementsFromFile(std::string dbName,std::string file) {
     try {
         std::string statement = "";
         std::string line = "";
@@ -42,6 +42,7 @@ sql::ResultSet* MySql::executeStatemantsFromFile(std::string dbName,std::string 
         {
             statement += line;
         }
+        File.close();
         return this->executeStatement(dbName , statement);
     }catch(const std::ifstream::failure& e) {
         std::cout << "Error opening file " << file << " : " << e.what() << std::endl;
@@ -50,10 +51,22 @@ sql::ResultSet* MySql::executeStatemantsFromFile(std::string dbName,std::string 
     }
 }
 
-MySql::~MySql() {
-    delete cnn;
-    delete res;
+std::vector<sql::ResultSet*> MySql::executeStatements(std::string dbName , std::vector<std::string> Statements) {
+    std::vector<sql::ResultSet*> Results;
+    for(int i = 0; i < Statements.size() ; i++) {
+        Results.push_back(this->executeStatement(dbName,Statements[i]));
+    }
+    return Results;
+}
+
+void MySql::generateStatement() {
     delete statement;
+    statement = this->cnn->createStatement();
+}
+
+MySql::~MySql() {
+    delete this->statement;
+    delete this->cnn;
 }
 
 
